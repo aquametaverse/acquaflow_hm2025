@@ -1,0 +1,99 @@
+AcquaFlow features a **DeFi “Harbour” portal** that is NFT‑gated 
+It is a gamified UX wrapping a perfect combination of AI powered usage of Uniswap v4, Arc, LI.FI, and Yellow to offer auto‑invest and “auto‑return to harbour” safety flows, and fast trading at low fees for the Advanced trader.
+ 
+## DeFi Harbour Overview
+
+- Access is gated by **AcquaFlow rider/board NFTs** (phygital or digital), so only verified players enter the DeFi portal.  
+- Inside, users see **quests, missions, and decks** instead of “vaults, LP positions, routes,” but under the hood you’re using Uniswap v4 hooks, Arc’s USDC infra, LI.FI routing, and Yellow sessions
+- The core metaphor: you **sail out** (deploy capital into strategies) and **auto‑return to harbour** (capital rebalanced back to a safe USDC harbour on Arc when conditions or missions end).
+- Advanced trader can benefit from the ecosystem offering fast trades and variety of chains to interact.
+
+***
+
+## Access & Identity
+
+- **NFT gate**:  
+  - Frontend checks for ownership of AcquaFlow NFTs (Sui objects) before showing DeFi Harbour.  
+  - Different NFT tiers (boards, badges, sponsor passes) unlock higher‑level strategies or limits.  
+
+- **ENS profile integration**:  
+  - ENS text records for riders store DeFi preferences: `pref_chain`, `pref_risk`, `pref_token`, `max_drawdown_bps`.  
+  - DeFi Harbour reads these and preconfigures “recommended routes” and “safe harbour” settings 
+
+***
+
+## Core DeFi Features
+
+### 1. Auto‑Invest “Voyages”
+
+Gamified auto‑invest strategies:
+
+- User picks a **Voyage card**:
+  - “Stable Harbour Run”: mostly USDC on Arc with low‑risk yield.  
+  - “Cross‑Current LP”: provide liquidity via Uniswap v4 with protective hooks.  
+  - “Multi‑Chain Adventure”: route across chains via LI.FI to yield venues or perp collateral  
+
+- Under the hood:
+  - **LI.FI**: computes best cross‑chain route (if starting assets are not on the target chain), performs swap/bridge in one flow  
+  - **Arc**: used as main USDC “home chain” for yield and as safe harbour (USDC‑native gas, fast confirmations, built‑in FX infra)  
+  - **Uniswap v4**: hooks used to implement dynamic fee LP, auto‑compounding, or limit‑order‑like provisioning around certain price bands  
+
+The user sees progress bars, risk/return badges, and “XP” for successfully completing voyages, aligning with 2025 GameFi patterns where DeFi actions are wrapped in mission flows  
+
+### 2. Auto “Return to Harbour” Safety
+
+A central mechanic: whenever conditions are hit, funds **auto‑return to USDC on Arc**:
+
+- Safety triggers:
+  - Portfolio drawdown exceeds user’s `max_drawdown_bps`.  
+  - Strategy tenure ends (e.g., 7‑day voyage complete).  
+  - Volatility or on‑chain risk metrics (oracle feeds, spreads) breach thresholds.  
+
+- Execution:
+  - **Uniswap v4 hooks** check conditions before/after swaps and liquidity updates; when conditions fail, hooks unwind LP and convert to USDC  
+  - **LI.FI** routes assets back to Arc if they’re on other chains, using best path (bridge + swap)
+  - On Arc, funds sit in low‑risk USDC strategies or simply idle in the user’s Arc wallet, with the DeFi Harbour UI showing “Docked at Harbour”.
+
+This gives a clear, judge‑friendly story about risk management and automated capital preservation.
+
+### 3. Yellow‑Powered Sessions & Fees
+
+Yellow handles the **UX and fee layer** for DeFi actions:
+
+- Users open a **Yellow session** that:
+  - Prefunds a balance in their preferred chain/token.  
+  - Covers multiple DeFi actions (bridges, swaps, LP adjustments) off‑chain as a session tab 
+- Only one settlement transaction is needed, significantly improving UX and aligning with Yellow’s target use cases for pay‑per‑use and gasless DeFi interactions  
+- Gamification:
+  - Completing DeFi Voyages through Yellow sessions can yield extra FLOW rewards or fee rebates.
+
+***
+
+## GameFi Integration
+
+- **Quests**:  
+  - “First Harbour Voyage”: stake USDC on Arc via LI.FI + Arc once.  
+  - “Calm Seas”: keep strategy within target volatility for N days.  
+  - “Rescue Mission”: auto‑harbour triggered at the right time (no liquidation / major drawdown).  
+
+- **XP & Leaderboards**:  
+  - XP for successful voyages, risk‑aware behaviour, and impact contributions.  
+  - Leaderboards can be Sui objects, viewable in‑world and in 2D dashboards.
+
+To follow the trend where DeFi participation is gamified with missions and social features, not only raw yield  
+
+***
+
+## Impact & Shacks in DeFi Harbour
+
+- **Impact strategies**:
+  - Dedicated “Impact Voyages” where part of yield or volume fees routes to the Impact Treasury.  
+  - Shack sponsors can offer **branded strategies**: e.g., “Eco‑Board Brand x Arc Safe Yield,” where a sponsor shares part of its revenue with cleanup efforts.  
+
+- **Shack DeFi pages**:
+  - Inside a Shack, sponsors offer curated DeFi routes (e.g., stable yield for their local community, NFT‑backed credit lines using Arc) and earn a share of protocol fees.  
+
+***
+
+
+
