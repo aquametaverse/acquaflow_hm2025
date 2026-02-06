@@ -1,6 +1,6 @@
-# AquaFlow – Phygital GameFi & DeFi Harbour
+# ACQUAFlow – Phygital GameFi & DeFi Harbour
 
-AquaFlow is a phygital GameFi and DeFi protocol for water‑sports communities, built for ETHGlobal HackMoney 2026. NFC/QR‑equipped paddleboard NFTs act as identities, payment devices, and DeFi access keys across Sui, Yellow, Uniswap v4, Arc, LI.FI, and ENS.
+ACQUAFlow is a phygital GameFi and DeFi protocol for water‑sports communities, built for ETHGlobal HackMoney 2026. NFC/QR‑equipped paddleboard NFTs act as identities, payment devices, and DeFi access keys across Sui, Yellow, Uniswap v4, Arc, LI.FI, and ENS.
 
 Players tap or scan their phygital boards to rent gear, enter races, and launch gamified DeFi “voyages” that automatically return funds to a safe USDC harbour on Arc. A built‑in impact fee funds real‑world plastic‑pollution research and cleanup.
 
@@ -11,7 +11,7 @@ Players tap or scan their phygital boards to rent gear, enter races, and launch 
 - **Phygital paddleboard NFTs**
   - 3D‑printed or tag‑based boards with NFC chip + QR/barcode
   - Tied to Sui NFTs that store rider identity, stats, and equipment
-  - ENS names (e.g. `rider123.aqua.eth`) link physical boards to on‑chain state
+  - ENS names (e.g. `rider123.ACQUA.eth`) link physical boards to on‑chain state
 
 - **Scan / Tap to Pay with Yellow**
   - Yellow SDK + Nitrolite sessions for rentals, race fees, lessons, merch
@@ -39,7 +39,7 @@ Players tap or scan their phygital boards to rent gear, enter races, and launch 
     - Trade NFTs
     - Buy real merch and services
     - Access gated digital content
-  - Protocol fees from Shacks feed both AQUA value capture and Impact Treasury
+  - Protocol fees from Shacks feed both ACQUA value capture and Impact Treasury
 
 - **Impact & Sustainability Mission**
   - Impact Treasury receives:
@@ -49,7 +49,7 @@ Players tap or scan their phygital boards to rent gear, enter races, and launch 
   - Cleanup and awareness quests reward players with XP/FLOW and badges
 
 - **DeFi Harbour Portal (NFT‑Gated)**
-  - Access restricted to AquaFlow NFTs
+  - Access restricted to ACQUAFlow NFTs
   - Gamified DeFi “voyages”:
     - **Stable Harbour Run** – low‑risk USDC yield on Arc
     - **Cross‑Current LP** – Uniswap v4 LP with hooks‑based strategies
@@ -111,9 +111,9 @@ Players tap or scan their phygital boards to rent gear, enter races, and launch 
 ### ENS
 
 - ENS names for:
-  - Riders (`rider123.aqua.eth`)
-  - Shacks (`brand.aqua.eth`)
-  - Impact Treasury (`impact.aqua.eth`)
+  - Riders (`rider123.ACQUA.eth`)
+  - Shacks (`brand.ACQUA.eth`)
+  - Impact Treasury (`impact.ACQUA.eth`)
 - ENS text records store:
   - Sui object IDs
   - Yellow accounts
@@ -143,3 +143,37 @@ Players tap or scan their phygital boards to rent gear, enter races, and launch 
 │  ├─ arc/
 │  └─ ens/
 └─ README.md
+
+
+=========================================================
+
+Install dependencies
+
+1 bash
+pnpm install   # or yarn / npm
+
+2 Configure environment
+Create .env.local with:
+
+RPC URLs
+Yellow/Nitrolite keys
+LI.FI API key (if required)
+Arc testnet details
+ENS resolver / chain config
+
+3 Run web portal
+bash
+pnpm dev
+
+4 Deploy / build Sui contracts
+bash
+cd contracts/sui
+sui move build
+# sui client publish --gas-budget <...>
+
+5 Run demo scripts
+Example:
+
+scripts/demo_yellow_session.ts
+scripts/demo_lifi_route.ts
+
