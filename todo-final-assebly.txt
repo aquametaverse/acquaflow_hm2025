@@ -1,0 +1,35 @@
+Final Strech - put  together many ideas and pieces 
+
+- Complete ENS domain work , to rewrite all final hackathon code 
+
+wallet to ens 
+wallet to subdomain ens
+ens txt reccords for gamefi 
+txt reccords for defi payment preference 
+
+----
+
+burn nft with logo on SUI 
+
+App for aui , 
+App for Sui used for rental with yellow combined
+---
+
+reporting features for customers 
+
+Solution for merchant
+reporting features for merchants
+
+
+Circle for merchant to merchat transactions, large amnounts requiring KYC and reporting , 
+Circle For EUR to USD
+
+Future CAD support 
+
+Sample Purchase at merchant payment 
+Sample GAMEFI 
+
+
+defi gamification, and advanced features 
+
+acquaflow-SUIvant-nft-minter.txt
